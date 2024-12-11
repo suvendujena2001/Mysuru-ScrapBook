@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mysore ScrapBook</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #702a2c, #0c3b68, #772861, #a18cd1);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header, footer {
+      background: linear-gradient(90deg, #fbc2eb, #a6c1ee, #84fab0);
+      background-size: 200% 200%;
+      animation: synchronizedGradient 10s ease infinite;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      padding: 1rem 0;
+    }
+
+    @keyframes synchronizedGradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    header {
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .friend-photo {
+      cursor: pointer;
+      max-width: 150px;
+      border: 2px solid #dee2e6;
+      transition: transform 0.2s;
+    }
+
+    .friend-photo:hover {
+      transform: scale(1.1);
+    }
+
+    footer nav ul.pagination li a {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: none;
+      color: #333;
+    }
+
+    footer nav ul.pagination li a:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
+    .card {
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+      object-fit: cover;
+      height: 250px; /* Adjust height as needed */
+    }
+
+    .card-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee, #84fab0);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+    }
+
+    /* Enhanced Heading Styles */
+    .section-heading {
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee, #84fab0);
+      -webkit-background-clip: text;
+      letter-spacing: 3px;
+      margin-bottom: 2rem;
+    }
+
+    .section-text {
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #f9f9f9;
+      font-family: 'Georgia', serif;
+      text-align: justify;
+      letter-spacing: 0.5px;
+      padding: 0 10px;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #a18cd1;
+    }
+
+    /* Hover Effect for Vacation Photos */
+    .vacation-photo:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mysore ScrapBook</h1>
+  </header>
+
+  <main class="container my-4">
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+      <li class="nav-item">
+        <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab">About Us</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="friends-tab" data-bs-toggle="tab" data-bs-target="#friends" type="button" role="tab">Friends</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" type="button" role="tab">Vacation Memories</button>
+      </li>
+    </ul>
+
+    <div class="tab-content mt-4" id="myTabContent">
+      <!-- Page 1: About Us -->
+      <div class="tab-pane fade show active" id="about" role="tabpanel" style="background: linear-gradient(to bottom, #1e1e2f, #3b3b5c); color: #f0f0f0; padding: 40px; font-family: 'Georgia', serif; font-size: 1.1rem;">
+        <div class="container">
+          <h2 class="section-heading text-center text-warning mb-4" style="font-family: 'Trebuchet MS', sans-serif; font-size: 2.5rem;">Friends Reunion</h2>
+          <div class="row">
+            <div class="col-lg-10 mx-auto">
+              <p class="mb-4 text-justify">
+                Three years had passed since I’d last seen Suv. I still remember the day we first met as kids, running around the neighborhood, getting into trouble. Life had taken us in different directions, and it was only through our childhood bond that we stayed in touch over the years. But, finally, the stars aligned, and Suv was coming to Mysore. I couldn’t wait to see him.
+              </p>
+              <p class="mb-4 text-justify">
+                It was a bright afternoon when Suv arrived at our meeting point. I had told him to meet me at this particular spot, but knowing Suv, I just <em>had</em> to make him wait a little while. It wouldn’t be a reunion if I didn’t make him sweat a bit, right? I knew he’d be annoyed, but I couldn’t resist the temptation. He wasn’t too happy about it, though, and after half an hour of waiting, he walked to a nearby stall and bought some cold badam milk—for both of us, mind you! Classic Suv.
+              </p>
+              <p class="mb-4 text-justify">
+                When I finally showed up, I was all smiles, and of course, I made a joke about the long wait. But the real surprise for Suv was meeting Uma. I’d told him a little about her, but now was the moment he’d see for himself. Uma had become a close friend of mine here in Mysore, and she had no idea how much I loved teasing Suv. So when I introduced them, I couldn’t help but drop a little hint about how Uma was my new bestie. Uma was sweet, though—she didn’t really tease Suv much at all. I was just being my usual playful self.
+              </p>
+              <p class="mb-4 text-justify">
+                We all went out for lunch at a cozy local spot, and though Suv was still processing everything, the atmosphere was relaxed and fun. Uma and I joked back and forth, while Suv slowly warmed up to her. He’s always been a bit slow to warm up to new people, but Uma’s charm worked wonders. By the end of lunch, I could tell Suv had already decided he liked her. New friends were always a good thing.
+              </p>
+              <p class="mb-4 text-justify">
+                The day’s itinerary included sightseeing, and I was all too excited to show Suv and Uma around. First, we made our way to Chamundi Temple, where the climb was a little exhausting, but the views from the top were worth it. Suv had his usual commentary on the climb, always cracking jokes, even when he was out of breath. Uma quietly admired the surroundings, and I couldn’t help but notice the chemistry building between the two of them. I had to tease Suv a bit, of course.
+              </p>
+              <p class="mb-4 text-justify">
+                Next, we headed to Mysore Palace. As soon as we stepped inside, Suv’s eyes widened in awe. The place was breathtaking, and he was a mixture of fascinated and thrilled. I could tell he was loving every second of it. It wasn’t the first time I’d visited, but showing it to Suv made me appreciate it all over again. We snapped a few photos, laughed at some weird angles we tried, and just soaked in the royal vibes.
+              </p>
+              <p class="mb-4 text-justify">
+                Then, we visited the Dasara Exhibition. Suv was practically bouncing from stall to stall, taking in all the colors and excitement. I could tell he was having a great time. Uma, of course, had some interesting insights into the exhibition’s history. But it was Suv who had us laughing nonstop. That’s when disaster struck. Suv realized his wallet was missing.
+              </p>
+              <p class="mb-4 text-justify">
+                At first, I thought he was joking. But when I saw the genuine concern on his face, I knew something was wrong. He had around 6000 to 7000 rupees in there—money he had saved up for this trip. I could tell he was seriously bummed out, and I didn’t want him to stay upset. I quickly made a joke to lighten the mood. “It’s okay, Suv. Look at the bright side—you don’t need money to have fun with us!” But I could see how hurt he was. 
+              </p>
+              <p class="mb-4 text-justify">
+                That’s when I kicked into high gear. I wasn’t going to let a little thing like stolen cash ruin our day. I made Suv laugh, tried to distract him with more sightseeing, and pushed him to try all the local snacks I had been dying to share with him. Every time I saw him starting to frown, I’d drag him to a new food stall. “Come on, try this one! You can’t leave Mysore without having a real Mysore Pak!” I kept saying, hoping he’d forget about the money.
+              </p>
+              <p class="mb-4 text-justify">
+                By the time evening came around, we had roamed Mysore in auto-rickshaws, eaten snacks till we were stuffed, and laughed so much that my stomach ached. Suv had forgotten about the missing money—or at least, he wasn’t letting it ruin the fun. We had shared so many moments that evening, from silly jokes to genuine conversations. Uma had even started pulling Suv’s leg in her own quiet way, and I loved every second of it.
+              </p>
+              <p class="mb-4 text-justify">
+                Suv had come to Mysore a little unsure about what to expect. He had come to meet me after all this time, and I was sure I’d give him a trip to remember. But what I didn’t expect was how much <em>I’d</em> enjoy seeing him in a new light, especially around Uma. They got along so well, and it made me happy to know that he was making a new friend.
+              </p>
+              <p class="mb-4 text-justify">
+                By the time the day ended, I could tell this was going to be one of those trips Suv would talk about for years. I was so glad he came, even if things hadn’t gone perfectly. Life wasn’t about the perfect moments—it was about the memories you created, and this day would go down as one of the best. Sure, he lost some cash, but he gained so much more—new experiences, new friendships, and some pretty ridiculous stories to tell.
+              </p>
+              <p class="text-justify">
+                As Suv boarded his bus back home the next day, I could see the satisfaction on his face. He had that glow that came from truly enjoying a trip. I waved him off, already planning the next time we’d get together. “Ciao, Suv,” I whispered to myself. “Adios. Have a good day.”
+              </p>
+              <p class="text-justify">
+                And so, the story of that Mysore trip was added to our ever-growing scrapbook of memories—filled with adventure, laughter, and a bond that would last forever.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Page 2: Friends -->
+      <div class="tab-pane fade" id="friends" role="tabpanel">
+        <h2 class="section-heading">Meet the Friends</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <div class="card shadow-lg" data-bs-toggle="modal" data-bs-target="#friend1Modal">
+              <img src="Sam4.jpeg" class="card-img-top img-fluid" alt="Sam">
+              <div class="card-body text-center">
+                <h3 class="card-title">Sam</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card shadow-lg" data-bs-toggle="modal" data-bs-target="#friend2Modal">
+              <img src="uma2.jpeg" class="card-img-top img-fluid" alt="Uma">
+              <div class="card-body text-center">
+                <h3 class="card-title">Uma</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="card shadow-lg" data-bs-toggle="modal" data-bs-target="#friend3Modal">
+              <img src="Suv1.jpeg" class="card-img-top img-fluid" alt="Suv">
+              <div class="card-body text-center">
+                <h3 class="card-title">Suv</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 3: Vacation Photos -->
+      <div class="tab-pane fade" id="photos" role="tabpanel">
+        <h2 class="section-heading">Vacation Memories</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <img src="Suv3.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+            <img src="Sam7.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+            <img src="sam1.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+            <img src="Suv2.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+            <img src="Sam5.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+            <img src="uma3.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
+            <img src="Sam8.jpeg" class="img-fluid rounded vacation-photo" alt="Vacation Photo">
+          </div>
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Contact Us</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Follow us on Instagram:</p>
+          <ul>
+            <li><a href="https://www.instagram.com/saha_samriddhi_/" target="_blank">Sam's Instagram</a></li>
+            <li><a href="https://www.instagram.com/umaaa_._/" target="_blank">Uma's Instagram</a></li>
+            <li><a href="https://www.instagram.com/suvendujena2001/" target="_blank">Suv's Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Friend Details Modals -->
+  <div class="modal fade" id="friend1Modal" tabindex="-1" aria-labelledby="friend1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sam</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Meet Samriddhi, a vibrant soul from West Bengal, currently mastering the art of Visual Communication with a focus on Animation & Design in Mysore. A passionate designer, she thrives on creativity and loves exploring new horizons. Her hobbies? Singing, traveling, cooking, dancing, and even playing! Samriddhi’s zest for life is fueled by her eagerness to learn, connect, and grow. With a heart full of positivity and a mind buzzing with ideas, she believes in the magic of teamwork and innovation. Always up for a chat and new adventures—she’s your go-to friend for inspiration and good vibes!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="friend2Modal" tabindex="-1" aria-labelledby="friend2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Uma</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Meet Uma, a creative spirit from Thrissur, Kerala, currently pursuing her master’s in Visual Communication with a focus on Animation & Design in Mysore. A BCA graduate from Bangalore, she’s passionate about what she does and loves gaming, listening to music, and exploring new dishes. Uma’s an ambivert who enjoys her own space but opens up once she connects with like-minded people. Always eager to learn, grow, and embrace new opportunities, she’s excited for what the future holds. Feel free to reach out for a chat or collaboration—she’s all about sharing ideas and making connections!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="friend3Modal" tabindex="-1" aria-labelledby="friend3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Suv</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Meet Suvendu, a fun-loving guy from Bhubaneswar, Odisha, with a Bachelor's degree in Computer Science and Engineering. A music enthusiast and a bibliophile with over 100 books, he dreams of creating his own library someday. Suvendu’s a selective extrovert who takes his time making new friends, but once he does, he’s all in. He loves making people laugh, sharing movie recommendations, and indulging in a bit of poetry. A full-time romantic who loves traveling to new places, he thrives on real, in-person connections. Always ready to bring a smile—have an awesome day!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
